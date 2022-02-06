@@ -75,12 +75,14 @@ public class PayBack {
 
     public override string ToString() {
         StringBuilder builder = new StringBuilder();
+        builder.AppendLine();
         builder.AppendLine("RESULTADO");
         foreach (Equipment equipment in Equipments) {
             builder.AppendLine($"Model: {equipment.Name}");
             builder.AppendLine($"Preço: R${equipment.Value}");
             builder.AppendLine($"Quantidade: {equipment.Quantity}");
         }
+        builder.AppendLine();
         builder.AppendLine($"Total Investido: R${TotalInvested()}");
         builder.AppendLine($"Custo: " +
                            $"R${Energy.ValueConsumption().ToString("F2", CultureInfo.InvariantCulture)}");
